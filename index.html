@@ -48,7 +48,7 @@ function revokeURL(url) {
 
 
   // No modularize, asm.js in its own file, separate .mem init file
-  Promise.all([b('Test.js'), s('Test.asm.js'), b('Test.mem')]).then((r) => {
+  Promise.all([b('Negi.js'), s('Negi.asm.js'), b('Negi.mem')]).then((r) => {
     Module.mem = r[2];
     var url = URL.createObjectURL(new Blob([r[0]], { type: 'application/javascript' }));
     s(url).then(() => { revokeURL(url) });
